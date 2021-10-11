@@ -14,13 +14,20 @@
     <h3>Press to begin!</h3>
     <div class="right">
         <div id="quiz">
-            <div id="quizBody"></div>
+            <div id="quizBody">
+                <div id="correctFeedback" class="hide">That is the correct answer!</div>
+                <div id="wrongFeedback" class="hide">That is the wrong answer!</div>
+                <div id="questions" class="hide">
+                    <h2 id="questionTitle"></h2>
+                    <div id="questionChoices"></div>
+                </div>
+            </div>
 
         </div>
         <!--timer with a couthdown time right of navabar-->
         <h4> Time <span id="timeLeft"> 0</span></h4>
         <!--creating a btn "start" to beggin the game-->
-        <button onclick="beggin()">Start</button>
+        <button id="start-button">Start</button>
         <div id="navbar">
             <div class="left">
                 <a onclick="getScore()" href="#">
