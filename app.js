@@ -63,11 +63,18 @@ function beggin() {
 }
 
 function handleTimer() {
-  timeLeft--
+  /* timeLeft--
   document.getElementById('timeLeft').innerHTML = timeLeft
 
   if (timeLeft <= 0) {
     timeLeft = 0
+  } */
+
+  if (timeLeft >= 1) {
+    document.getElementById('timeLeft').innerHTML = timeLeft
+    timeLeft--
+  } else {
+    endQuiz
   }
 }
 
