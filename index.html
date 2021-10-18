@@ -20,6 +20,7 @@
                 <div id="questions" class="hide">
                     <h2 id="questionTitle"></h2>
                     <div id="questionChoices"></div>
+
                 </div>
             </div>
 
@@ -28,12 +29,25 @@
         <h4> Time <span id="timeLeft"> 0</span></h4>
         <!--creating a btn "start" to beggin the game-->
         <button id="start-button">Start</button>
+        <button id="clear">Clear</button>
         <div id="navbar">
             <div class="left">
-                <a onclick="getScore()" href="#">
+                <a id="viewScoreBtn">
+
                     <h4> View Highscore</h4>
                 </a>
+
+
             </div>
+        </div>
+        <div id="endQuiz" class="hide">
+            <h4>Please enter your initials to save your score!</h4>
+            <h5>Score: <span id="score"></span></h5>
+            <input type="text" max="3" id="initials" />
+            <button type="submit" id="submitBtn">Submit Score</button>
+        </div>
+        <div id="viewHighScores" class="hide">
+            <ol id="userScores"></ol>
         </div>
     </div>
     </div>

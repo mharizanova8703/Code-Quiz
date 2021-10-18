@@ -38,6 +38,7 @@ var questions = [
   },
 ]
 //score and timer
+
 var score = 0
 var currentQuestionIndex = 0
 var timeLeft = 0
@@ -48,10 +49,12 @@ var wrongFeedback = document.getElementById('wrongFeedback')
 var correctFeedback = document.getElementById('correctFeedback')
 
 function beggin() {
+  score = 0
   timeLeft = 75
+  document.getElementById('score').innerHTML = score
+  currentQuestionIndex = 0
   document.getElementById('timeLeft').innerHTML = timeLeft
   console.log('clicked start button')
-
   timer = setInterval(handleTimer, 1000)
 
   questionsDiv.removeAttribute('class')
@@ -64,7 +67,7 @@ function handleTimer() {
   document.getElementById('timeLeft').innerHTML = timeLeft
 
   if (timeLeft <= 0) {
-    // fire off end quiz function
+    timeLeft = 0
   }
 }
 
@@ -101,24 +104,78 @@ function handleQuestionClick() {
     wrongFeedback.removeAttribute('class')
     setTimeout(function () {
       wrongFeedback.setAttribute('class', 'hide')
-    }, 2000)
+    }, 1000)
   } else {
+    score++
+    document.getElementById('score').innerHTML = score
     correctFeedback.removeAttribute('class')
     setTimeout(function () {
       correctFeedback.setAttribute('class', 'hide')
-    }, 2000)
+    }, 1000)
   }
 
   currentQuestionIndex++
   console.log('currentQestionIndex', currentQuestionIndex)
 
   if (currentQuestionIndex === questions.length) {
-    // fire off end quiz function
+    endQuiz()
+    // timeLeft = 0;
   } else {
     displayQuestions()
   }
 }
 
+function endQuiz() {
+  timeLeft = 0
+  var endQuizDiv = document.getElementById('endQuiz')
+  endQuizDiv.removeAttribute('class')
+  questionsDiv.setAttribute('class', 'hide')
+}
+let initialsEl = document.getElementById('initials')
+
+let submitBtn = document.getElementById('submitBtn')
+
+submitBtn.addEventListener('click', function () {
+  let initials = initialsEl.value
+
+  if (initials !== '') {
+    let highscore = JSON.parse(localStorage.getItem('highScores')) || []
+
+    let newScore = {
+      intials: initials,
+      score: score,
+    }
+    highscore.push(newScore)
+    console.log('initials', initials)
+    console.log('score', score)
+    localStorage.setItem('highScores', JSON.stringify(highscore))
+  }
+})
+
 let startBtn = document.getElementById('start-button')
 
 startBtn.onclick = beggin
+
+function printHighscore() {
+  let viewHighScoreDiv = document.getElementById('viewHighScores')
+  viewHighScoreDiv.removeAttribute('class')
+  highscore = JSON.parse(window.localStorage.getItem('highScores'))
+  highscore.sort(function (a, b) {
+    return b.score - a.score
+  })
+  highscore.forEach(function (score) {
+    var liTag = document.createElement('li')
+    liTag.textContent = score.intials + ': ' + score.score
+    let userScore = document.getElementById('userScores')
+    userScore.append(liTag)
+  })
+}
+function clearHighscores() {
+  window.localStorage.removeItem('highscores')
+  window.location.reload()
+}
+document.getElementById('clear').onclick = clearHighscores
+// printHighscore()
+
+let viewScore = document.getElementById('viewScoreBtn')
+viewScore.onclick = printHighscore
