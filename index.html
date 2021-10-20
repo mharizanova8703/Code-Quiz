@@ -6,52 +6,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap" rel="stylesheet">
+
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>JavaScript Quiz</h1>
-    <h3>Press to begin!</h3>
-    <div class="right">
-        <div id="quiz">
-            <div id="quizBody">
-                <div id="correctFeedback" class="hide">That is the correct answer!</div>
-                <div id="wrongFeedback" class="hide">That is the wrong answer!</div>
-                <div id="questions" class="hide">
-                    <h2 id="questionTitle"></h2>
-                    <div id="questionChoices"></div>
+    <div class="container">
+
+        <h1>JavaScript Quiz </h1>
+        <h3>Press to begin!</h3>
+        <div class="right">
+            <div id="quiz">
+                <div id="quizBody">
+                    <div id="correctFeedback" class="hide">That is the correct answer!</div>
+                    <div id="wrongFeedback" class="hide">That is the wrong answer!</div>
+                    <div id="questions" class="hide">
+                        <h2 id="questionTitle"></h2>
+                        <div id="questionChoices"></div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!--timer with a couthdown time right of navabar-->
+            <h4> Time <span id="timeLeft"> ⏰ 0</span></h4>
+            <!--creating a btn "start" to beggin the game-->
+            <button id="start-button">Start</button>
+            <button id="clear">Clear</button>
+            <div id="navbar">
+                <div class="left">
+                    <a id="viewScoreBtn"></a>
+
+                        <h4> View Highscore </h4>
+                        <div id="viewHighScores" class="hide"></div>
+
+                  
+
+
+
+
+
+
+
+                    <div id="endQuiz" class="hide">
+                        <h4>Please enter your initials to save your score!</h4>
+                        <h5>Score: <span id="score"></span></h5>
+                        <input type="text" max="3" id="initials" />
+                        <button type="submit" id="submitBtn">Submit Score</button>
+
+                    </div>
 
                 </div>
             </div>
-
-        </div>
-        <!--timer with a couthdown time right of navabar-->
-        <h4> Time <span id="timeLeft"> 0</span></h4>
-        <!--creating a btn "start" to beggin the game-->
-        <button id="start-button">Start</button>
-        <button id="clear">Clear</button>
-        <div id="navbar">
-            <div class="left">
-                <a id="viewScoreBtn">
-
-                    <h4> View Highscore</h4>
-                </a>
-
-
-            </div>
-        </div>
-        <div id="endQuiz" class="hide">
-            <h4>Please enter your initials to save your score!</h4>
-            <h5>Score: <span id="score"></span></h5>
-            <input type="text" max="3" id="initials" />
-            <button type="submit" id="submitBtn">Submit Score</button>
-        </div>
-        <div id="viewHighScores" class="hide">
-            <ol id="userScores"></ol>
         </div>
     </div>
     </div>
     </div>
+
     <script src="app.js"></script>
 </body>
 
