@@ -26,3 +26,6 @@ displayed.
 * Final score which is calculated  using time remaining 
 *  Submit button
 *  Clear button
+
+
+ https://mharizanova8703.github.io/Code-Quiz/
