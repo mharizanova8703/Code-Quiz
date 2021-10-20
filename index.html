@@ -17,7 +17,7 @@
     <div class="container">
 
         <h1>JavaScript Quiz </h1>
-        <h3>Press to begin!</h3>
+        <h3>Press Start begin!</h3>
         <div class="right">
             <div id="quiz">
                 <div id="quizBody">
@@ -38,33 +38,31 @@
             <button id="clear">Clear</button>
             <div id="navbar">
                 <div class="left">
-                    <a id="viewScoreBtn"></a>
+                    <a id="viewScoreBtn">
 
-                        <h4> View Highscore </h4>
-                        <div id="viewHighScores" class="hide"></div>
+                        <h4> View Highscore</h4>
 
-                  
-
-
-
-
-
-
-
-                    <div id="endQuiz" class="hide">
-                        <h4>Please enter your initials to save your score!</h4>
-                        <h5>Score: <span id="score"></span></h5>
-                        <input type="text" max="3" id="initials" />
-                        <button type="submit" id="submitBtn">Submit Score</button>
-
-                    </div>
+                    </a>
 
                 </div>
+
+            </div>
+            <div id="endQuiz" class="hide">
+                <h4>Please enter your initials to save your score!</h4>
+                <h5>Score: <span id="score"></span></h5>
+                <input type="text" max="2" id="initials" />
+
+                <button type="submit" id="submitBtn">Submit Initials</button>
+
+
+            </div>
+            <div id="viewHighScores" class="hide">
+                <ol id="userScores"></ol>
             </div>
         </div>
     </div>
     </div>
-    </div>
+
 
     <script src="app.js"></script>
 </body>
