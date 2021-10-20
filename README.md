@@ -15,6 +15,9 @@ displayed.
 
 # This project has the following technology  features:
 
+* HTML
+* CSS
+* JavaScript
 * Timer with a starting value 0
 * Answers are recording using event listener
 * Local storage
