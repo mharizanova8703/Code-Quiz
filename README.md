@@ -36,7 +36,7 @@ https://user-images.githubusercontent.com/85656320/138111926-0292a50e-afc4-4c82-
  # Credits
  * Referenced for help with LocalStorage: Tutor Brian Gearty
  * Referenced for help with timer: https://www.w3schools.com/js/js_timing.asp
- * Referenced for help the timer was stopping on -1 : Logan Miner Ta
+ * Referenced for help the timer was stopping on -1 :  Ta
 
 
 
